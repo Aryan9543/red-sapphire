@@ -1,0 +1,19 @@
+{
+    "extends": "next/core-web-vitals",
+    "rules": {
+      "react/no-unescaped-entities": "error", // Enforce escaping quotes in JSX
+      "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }], // Allow unused vars with _ prefix
+      "@next/next/no-img-element": "warn", // Warn on <img> to encourage <Image>
+      "@typescript-eslint/ban-ts-comment": ["error", { "ts-expect-error": "allow-with-description" }], // Require @ts-expect-error with comments
+      "react-hooks/rules-of-hooks": "error", // Enforce proper hook usage
+      "@typescript-eslint/no-explicit-any": "warn" // Warn on any, push for types
+    },
+    "overrides": [
+      {
+        "files": ["app/terms/page.tsx", "app/privacy-notice/page.tsx"],
+        "rules": {
+          "react/no-unescaped-entities": "warn" // Relax for these files temporarily
+        }
+      }
+    ]
+  }
